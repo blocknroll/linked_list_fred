@@ -1,0 +1,17 @@
+Jeff’s screencast
+
+http://vimeo.com/115575950
+
+
+create git repo:  git init
+
+
+TEST startup:
+require ‘minitest/autorun’
+require ‘minitest/pride’
+require ‘./list’
+
+class ListTest < Minitest::Test
+  def test_it_exists
+  end
+end

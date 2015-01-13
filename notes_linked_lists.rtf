@@ -1,0 +1,347 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Bold;
+\f3\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;\red234\green233\blue255;\red14\green110\blue109;\red143\green177\blue236;
+\red29\green29\blue29;\red0\green0\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww12300\viewh12780\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \
+\
+\
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+====================================================================\
+Jeff\'92s screencast\
+\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://vimeo.com/115575950"}}{\fldrslt \cf0 \expnd0\expndtw0\kerning0
+http://vimeo.com/115575950}}\
+\
+\
+create git repo:  git init\
+\
+\
+TEST startup:\
+\kerning1\expnd0\expndtw0 require \'91minitest/autorun\'92\
+require \'91minitest/pride\'92\
+require \'91./list\'92\
+\
+class ListTest < Minitest::Test\
+  def test_it_exists\
+  end\
+end\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+def next_node	looks around the list\
+\
+\
+ruby assignment\
+	
+\f1 \cb2 \expnd0\expndtw0\kerning0
+entry
+\f2\b \expnd0\expndtw0\kerning0
+.
+\f1\b0 \expnd0\expndtw0\kerning0
+next 
+\f2\b \expnd0\expndtw0\kerning0
+=
+\f1\b0 \expnd0\expndtw0\kerning0
+ \cf3 \expnd0\expndtw0\kerning0
+@head\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\qj
+\cf0 \expnd0\expndtw0\kerning0
+    	\cf3 \expnd0\expndtw0\kerning0
+@head\cf0 \expnd0\expndtw0\kerning0
+ 
+\f2\b \expnd0\expndtw0\kerning0
+=
+\f1\b0 \expnd0\expndtw0\kerning0
+ entry\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+	- we first have our new entry to point to the list's current head. \
+	- The next step is simply to move the 
+\f1 \cb2 \expnd0\expndtw0\kerning0
+@head
+\f0 \cb1 \expnd0\expndtw0\kerning0
+ pointer to point to the new entry.\
+\
+	isn\'92t it supposed to go L <\'97 R  ? 		(instead of L \'97> R ?)\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+====================================================================\
+\pard\pardeftab720\qj
+{\field{\*\fldinst{HYPERLINK "http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx"}}{\fldrslt \cf0 \expnd0\expndtw0\kerning0
+http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx}}\expnd0\expndtw0\kerning0
+\
+\
+Imagine a train. \
+Each railroad car on a train would be a single node in a linked list. \
+A node contains the contents of the node, such as gravel or passengers, as well as a link to the next node. \
+This gives us a sequential list of nodes where each node is completely independent. Textually, we can represent a list containing the set of items \{3,1,4,2,5\} like so:\
+3 -> 1 -> 4 -> 2 -> 5 -> ~\
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+Simply by changing links, you can re-order a linked list without moving around any data. This flexibility comes from the fact that, as said earlier, nodes are completely independent of each other. \
+A node doesn't know or care where its links point to.\
+\
+linked lists do not support random access, only sequential access from whichever node you happen to have a reference to.\
+\
+\
+In summary, a linked list is a sequential collection of nodes where each node is independent and contains a link to the next node in the list. \
+\
+Linked lists shine as a replacement for arrays where insertions and deletions all over the list are common and random access is uncommon.\
+\
+\
+\pard\pardeftab720\qj
+
+\f3\b \cf0 \cb4 \expnd0\expndtw0\kerning0
+Insertion and Deletion
+\b0 \expnd0\expndtw0\kerning0
+\
+To insert a node into a linked list, you need a reference to the node before where the new node is going to be inserted. Then it's a simple matter of re-linking the links in those two nodes. \
+\
+
+\b \expnd0\expndtw0\kerning0
+- The new node's link should be set to the previous node's link, \
+- and the previous node's link should be set to the new node.
+\b0 \expnd0\expndtw0\kerning0
+ \
+\
+Graphically the entire operation looks like this:\
+\
+\pard\pardeftab720\qj
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+          3 -> ~\
+\
+1 -> 2 ------> 4 -> 5 -> ~\
+\
+\
+          3\
+          |\
+1 -> 2 ---+--> 4 -> 5 -> ~\
+\
+\
+     +--> 3\
+     |    |\
+1 -> 2    +--> 4 -> 5 -> ~\
+\
+\
+1 -> 2 -> 3 -> 4 -> 5 -> ~\
+\
+\pard\pardeftab720\qj
+
+\f3 \cf0 \expnd0\expndtw0\kerning0
+The fourth step is merely a cleanup of the representation so that you can see how the new node has been completely inserted into the list between 2 and 4. Keep in mind that 2's link cannot be reset to point to 3 until after 3's link has been set. Otherwise 2's link would be lost and you wouldn't know what to set 3's link to. Order of operations is very important here. The code to perform this magic is extremely simple:
+\f0 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\
+\
+\
+\pard\pardeftab720\sa240\qj
+
+\f3\b \cf0 \cb4 \expnd0\expndtw0\kerning0
+Linked Lists vs. Arrays
+\b0 \expnd0\expndtw0\kerning0
+\
+The data structure that linked lists compete directly with is the array. There are four significant advantages to using linked lists over arrays that come to mind:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Linked lists can grow indefinitely\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Linked lists can shrink, thus saving memory\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Insertion is fast and cheap anywhere in the list\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Deletion is fast and cheap anywhere in the list\cb1 \
+\pard\pardeftab720\sa240\qj
+\cf0 \cb4 \expnd0\expndtw0\kerning0
+Often these advantages outweigh the disadvantages, but there are also several advantages for arrays when it comes to linked lists vs. arrays:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Arrays support random access, linked lists only sequential\cb1 \
+\ls2\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Arrays have a high locality of reference, which is good for the cache\cb1 \
+\ls2\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Arrays require less memory to store a single item, linked lists need links\cb1 \
+\ls2\ilvl0\cb4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Arrays are vastly simpler to understand and work with\cb1 \
+\pard\pardeftab720\sa240\qj
+\cf0 \cb4 \expnd0\expndtw0\kerning0
+However, arrays have a big problem growing and shrinking, or adding or removing items anywhere except the end. So the usual advice is to use an array when the size is fairly set in stone, and adding or removing will only occur at the end of the array. Use a linked list when adding and removing is common all across the list, or the size of the list is unknown and likely to change often.\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\
+\
+\
+\
+\
+\
+====================================================================\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.sitepoint.com/rubys-missing-data-structure/"}}{\fldrslt \cf0 \expnd0\expndtw0\kerning0
+http://www.sitepoint.com/rubys-missing-data-structure/}}\
+\
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+- arrays and lists are very different things\'85.\
+- Arrays are designed for random access of data across a large set\'85 \
+- while linked lists instead work well inserting, removing or reordering elements.\
+\
+- The only downside with using an array as a linked list seems to be performance: if you had many 1000s of elements Ruby would theoretically slow down repeatedly resizing the array to accommodate all of the elements as you added them.\
+\
+- arrays can often serve quite well as lists. \
+- Sometimes, however, you may actually need to repeatedly insert, remove and reorder elements in a large list. \
+- To avoid the performance penalties associated with array resizing and shifting, a real linked list might be what you need.\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+====================================================================\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.thelearningpoint.net/computer-science/basic-data-structures-in-ruby---linked-list---a-simple-singly-linked-list"}}{\fldrslt \cf5 \expnd0\expndtw0\kerning0
+http://www.thelearningpoint.net/computer-science/basic-data-structures-in-ruby---linked-list---a-simple-singly-linked-list}}\cf5 \expnd0\expndtw0\kerning0
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+====================================================================\cf5 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html"}}{\fldrslt \cf5 \expnd0\expndtw0\kerning0
+http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html}}\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+Each element (we will call it a node) of a list is comprising of two items - \
+	the data \
+	a reference to the next node. \
+\
+The last node has a reference to \cf6 \expnd0\expndtw0\kerning0
+null\cf0 \expnd0\expndtw0\kerning0
+. \
+\
+The entry point into a linked list is called the 
+\b \expnd0\expndtw0\kerning0
+head
+\b0 \expnd0\expndtw0\kerning0
+ of the list. \
+	It should be noted that 
+\b \expnd0\expndtw0\kerning0
+head is not a separate node, but the reference to the first node
+\b0 \expnd0\expndtw0\kerning0
+. \
+	
+\b \expnd0\expndtw0\kerning0
+If the list is empty then the head is a null reference.
+\b0 \expnd0\expndtw0\kerning0
+\
+\
+A linked list is a dynamic data structure. \
+The number of nodes in a list is not fixed and can grow and shrink on demand. \
+Any application which has to deal with an unknown number of objects will need to use a linked list.\
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
